@@ -1,0 +1,16 @@
+#div-formulario {
+    padding-top: 2em;
+    width: 100%;
+    text-align: center;
+}
+
+input, button {
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.error {
+    margin-top: 0.5em;
+    color:red;
+    font-weight: bolder;
+}

@@ -11,8 +11,10 @@ export class CabeceraComponent implements OnInit {
   estiloCabecera:string="cabecera";
   //Aplicado a ngStyle
   estiloH6:any = {
-    color:'orange'
+    color:'#555'
   }
+  //Imagen del logotipo
+  logotipo:string="./assets/images/logo.png";
 
   constructor() { }
 

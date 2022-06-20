@@ -1,1 +1,8 @@
-<p>crear works!</p>
+<div id="div-formulario">
+    <input type="text" placeholder="Título" [(ngModel)]="videojuego.titulo">
+    <input type="text" placeholder="Plataforma" [(ngModel)]="videojuego.plataforma">
+    <button (click)="agregar()">Agregar</button>
+    <div class="error">
+        {{ mensajeError }}
+    </div>
+</div>

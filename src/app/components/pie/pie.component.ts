@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pie.component.css']
 })
 export class PieComponent implements OnInit {
+  android:string="./assets/images/android.svg";
+  apple:string="./assets/images/apple.svg";
+  
 
   constructor() { }
 

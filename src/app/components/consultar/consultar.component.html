@@ -1,1 +1,6 @@
-<p>consultar works!</p>
+<div id="div-consulta" [ngStyle]="{'width':'500px','margin':'auto'}">
+    <div class="ficha-videojuego" *ngFor="let videojuego of videojuegos">
+        <h3>{{videojuego.titulo}}</h3>
+        <h4>{{videojuego.plataforma}}</h4>
+    </div>
+</div>
