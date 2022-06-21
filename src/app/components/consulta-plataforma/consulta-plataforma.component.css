@@ -1,7 +1,13 @@
 #consulta-plataforma {
     width: 800px;
     margin: auto;
+    text-align: center;
 }
+
 #consulta-plataforma h1 {
     text-align: center;
+}
+
+select, button {
+    padding: 10px;
 }

@@ -1,7 +1,16 @@
+h1 { 
+    text-align: center;
+}
 .ficha-videojuego{
     background-color: #777;
     color:orange;
     padding: 1em;
     margin-top:1em;
     border-radius: 10px;
+}
+.aviso {
+    font-size: 1.5em;
+    font-weight: bolder;
+    color:red;
+    text-align: center;
 }

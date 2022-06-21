@@ -1,0 +1,14 @@
+<div id="formulario">
+    <h1>Crear videojuego (TEMPLATE)</h1>
+    <form #formularioCreacionVideojuego="ngForm" (ngSubmit)="crearVideojuego(formularioCreacionVideojuego.value)">
+        <div>
+            <input type="text" placeholder="Título" name="titulo" ngModel>
+            <input type="text" placeholder="Plataforma" name="plataforma" ngModel>
+        </div>
+        <div>
+            <input type="submit" value="Crear (s)">
+            &nbsp;
+            <button>Crear (b)</button>
+        </div>
+    </form>
+</div>

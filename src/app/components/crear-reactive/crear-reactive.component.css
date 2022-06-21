@@ -1,0 +1,28 @@
+#formulario {
+    width: 800px;
+    margin: auto;
+    text-align: center;
+}
+input, button {
+    padding: 10px;
+    margin: 5px;
+}
+
+input.ng-valid {
+    border-color: green;
+    border-style: solid;
+    border-width: 3px;
+}
+
+input.ng-invalid {
+    border-color: red;
+    border-style: solid;
+    border-width: 3px;
+}
+input::placeholder {
+    color:blue;
+}
+
+h1::first-letter{
+    color:red;
+}

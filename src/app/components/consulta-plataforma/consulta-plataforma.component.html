@@ -1,6 +1,7 @@
 <div id="consulta-plataforma">
     <h1>Consulta por Plataforma</h1>
-    <select>
-        <option>PS5</option>
+    <select [(ngModel)]="plataformaSeleccionada" (change)="buscar()">
+        <option value="" selected>(Selecciona la plataforma deseada)</option>
+        <option value="{{plataforma}}" *ngFor="let plataforma of plataformas">{{ plataforma }}</option>
     </select>
 </div>
