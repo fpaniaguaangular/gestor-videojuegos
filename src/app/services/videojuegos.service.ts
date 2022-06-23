@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { LongitudInsuficienteError } from '../errors/longitud-insuficiente-error';
+import { VacioError } from '../errors/vacio-error';
 import { IVideojuego } from '../interfaces/ivideojuego';
 import { Videojuego } from '../models/videojuego';
 
@@ -27,7 +29,9 @@ export class VideojuegosService {
   addVideojuego(videojuego:Videojuego):void {
     if (videojuego.titulo.trim() == "") {
       //¿Realizar la acción requerida para paliar los efectos del error?
-      throw Error("El título no puede estar vacío");
+      throw new VacioError("El título no puede estar vacío");
+    } else if (videojuego.titulo.trim().length < 3) {
+      throw new LongitudInsuficienteError("El título debe tener más de 3 caracteres");
     }
     this.videojuegos.push(videojuego);
   }
@@ -36,7 +40,7 @@ export class VideojuegosService {
   addIVideojuego(videojuego:IVideojuego):void {
     if (videojuego.titulo.trim() == "") {
       //¿Realizar la acción requerida para paliar los efectos del error?
-      throw Error("El título no puede estar vacío");
+      throw new Error("El título no puede estar vacío");
     }
     this.videojuegos.push(videojuego);
   }

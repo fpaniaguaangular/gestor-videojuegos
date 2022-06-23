@@ -2,11 +2,17 @@
     <h1>Crear videojuego (REACTIVE)</h1>
     <form [formGroup]="formulario">
         <div>
-            <input type="text" placeholder="Título" formControlName="titulo">
+            <input type="text" placeholder="Título" formControlName="titulo" (input)="limpiarMensajeError()">
+        </div>
+        <div class="error">{{mensajeErrorTitulo}}</div>
+        <div>
             <input type="text" placeholder="Plataforma" formControlName="plataforma">
         </div>
         <div>
-            <input type="submit" (click)="crear()" value="Crear">&nbsp;<button (click)="visualizarDatos()">Visualizar</button>
+            <!--<input type="submit" (click)="crear()" value="Crear" [disabled]="!this.formulario.valid">-->
+            <input type="submit" (click)="crear()" value="Crear">
+            &nbsp;
+            <button (click)="visualizarDatos()">Visualizar</button>
         </div>
     </form>
     {{ formulario.value | json }}

@@ -20,8 +20,8 @@ const routes: Routes = [
   { path:'consultarPorPlataforma/:plataforma', component:ConsultarComponent},
   { path:'consultaPlataforma', component:ConsultaPlataformaComponent},
   { path:'ayuda', component:AyudaComponent, children: [
-    {path:'creditos', component:AyudaCreditosComponent},
-    {path:'instrucciones', component:AyudaInstruccionesComponent}
+    { path:'creditos', component:AyudaCreditosComponent },
+    { path:'instrucciones', component:AyudaInstruccionesComponent }
   ]},
   { path:'', component:AyudaComponent, pathMatch:'full'},
   { path:'**', component:InicioComponent},   

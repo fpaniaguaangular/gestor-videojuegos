@@ -14,7 +14,7 @@ input.ng-valid {
     border-width: 3px;
 }
 
-input.ng-invalid {
+input.ng-invalid.ng-dirty {
     border-color: red;
     border-style: solid;
     border-width: 3px;
@@ -24,5 +24,9 @@ input::placeholder {
 }
 
 h1::first-letter{
+    color:red;
+}
+
+.error {
     color:red;
 }

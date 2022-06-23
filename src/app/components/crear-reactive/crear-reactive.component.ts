@@ -10,11 +10,12 @@ import { VideojuegosService } from 'src/app/services/videojuegos.service';
 })
 export class CrearReactiveComponent implements OnInit {
   formulario:FormGroup;
+  mensajeErrorTitulo:string="";
   constructor(private videojuegosService:VideojuegosService, private router:Router) { 
     this.formulario = new FormGroup({
       titulo: new FormControl('', [
         Validators.required,
-        Validators.minLength(10)
+        Validators.minLength(5),
       ]),
       plataforma: new FormControl('',[
         Validators.required,
@@ -26,11 +27,22 @@ export class CrearReactiveComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   crear():void{
+    /*
+    for (let k in this.formulario.controls) {
+      console.log(k)
+      console.log(this.formulario.controls[k].errors);
+    }
+    */
     if (this.formulario.valid){
       this.videojuegosService.addVideojuego(this.formulario.value);
       this.router.navigateByUrl("/consultar");
+    } else {
+      if (this.formulario.controls['titulo'].errors?.['required']){
+        this.mensajeErrorTitulo="El título es obligatorio";
+      } else if (this.formulario.controls['titulo'].errors?.['minlength']){
+        this.mensajeErrorTitulo="El título debe ser mayor de 5 caracteres";
+      }
     }
   }
 
@@ -40,5 +52,8 @@ export class CrearReactiveComponent implements OnInit {
     console.log(this.formulario.controls["titulo"].setValue("Fornite"));
   }
 
+  limpiarMensajeError():void {
+    this.mensajeErrorTitulo="";
+  }
 
 }
